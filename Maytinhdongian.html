@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May tinh don gian</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input id="screen"> </td>
+        </tr>
+        <tr>
+            <td> <button id="No1" onclick="f(1)">1</button> </td>
+            <td> <button id="No2" onclick="f(2)">2</button> </td>
+            <td> <button id="No3" onclick="f(3)">3</button> </td>
+            <td> <button id="Plus" onclick="f('+')">+</button> </td>
+        </tr>
+        <tr>
+            <td> <button id="No4" onclick="f(4)">4</button> </td>
+            <td> <button id="No5" onclick="f(5)">5</button> </td>
+            <td> <button id="No6" onclick="f(6)">6</button> </td>
+            <td> <button id="Sub" onclick="f('-')">-</button> </td>
+        </tr>
+        <tr>
+            <td> <button id="No7" onclick="f(7)">7</button> </td>
+            <td> <button id="No8" onclick="f(8)">8</button> </td>
+            <td> <button id="No9" onclick="f(9)">9</button> </td>
+            <td> <button id="Mul" onclick="f('*')">x</button> </td>
+        </tr>
+        <tr>
+            <td> <button id="Clear" onclick="Del()">C</button> </td>
+            <td> <button id="No0" onclick="f(0)">0</button> </td>
+            <td> <button id="Cal" onclick="Cal()">=</button> </td>
+            <td> <button id="Div" onclick="f('/')">/</button> </td>
+        </tr>
+    </table>
+<script>
+    let result = document.getElementById("screen");
+    function f(value){
+        result.value += value;
+    }
+    function Del(){
+        result.value = "";
+    }
+    function Cal(){
+        let str = document.getElementById("screen").value;
+        result.value = eval(str);
+    }
+</script>
+</body>
+</html>

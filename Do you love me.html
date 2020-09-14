@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me?</title>
+</head>
+<body>
+<form>
+    <p>Do you love me?</p>
+    <button type="button" onclick="yes()" id="yesid">Yes</button>
+    <button id="no" onmouseover="xover()" style="position: absolute; left: 70px; top: 70px">No</button>
+    <p id="yes_id"></p>
+</form>
+<script>
+    function xover(){
+        let x = Math.random()* window.innerWidth;
+        let y = Math.random()* window.innerHeight;
+            document.getElementById("no").style.left = x + "px";
+            document.getElementById("no").style.top = y + "px";
+    }
+    function yes(){
+        document.getElementById("yes_id").innerHTML = "Me too, you are right!";
+    }
+</script>
+</body>
+</html>

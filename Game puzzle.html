@@ -2,14 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Game Puzzle</title>
+    <title>Title</title>
 </head>
-<body>
-<div class="puzzle">
-<img id="img1"    src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg" alt="">
-<img id="img2"    src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg" alt="">
-<img id="img3"    src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg" alt="">
-</div>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<body id="main">
+<img id="img1" onclick="changeImage(1)" src="Picture/anh1.JPG" alt="1">
+<img id="img2" onclick="changeImage(2)" src="Picture/anh2.JPG" alt="2">
+<img id="img3" onclick="changeImage(3)" src="Picture/anh3.JPG" alt="3">
+
+<script>
+    // function createImage() {
+    //     let main = document.getElementById("main");
+    //     let str ="";
+    //     for (let i = 0; i < 100; i++) {
+    //         str += `<img id="img${i}" onclick="changeImage(${i})" src="Picture/anh5.jpg" alt="5">`
+    //     }
+    //
+    //     main.innerHTML = str;
+    // }
+    function changeImage(id) {
+        let img = document.getElementById("img"+id);
+        let index = +img.alt;
+        //
+        // if(index < 5){
+        //     index++;
+        // }else {
+        //     index = 1;
+        // }
+
+        index<5?index++:index=1;
+
+        img.src = "Picture/anh"+index+".jpg";
+        // img.src =`Picture/anh${index}.jpg`;
+        img.alt = index;
+        checkWin();
+
+    }
+
+    function checkWin() {
+        let img1 = document.getElementById("img1");
+        let img2 = document.getElementById("img2");
+        let img3 = document.getElementById("img3");
+
+        if(img1.alt === img2.alt && img2.alt === img3.alt){
+            alert("Da xep hinh xong!");
+        }
+    }
+
+    // createImage();
+</script>
 </body>
-<script type="text/javascript" src=""></script>
 </html>
+© 2020 GitHub, Inc.
